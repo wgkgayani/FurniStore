@@ -81,44 +81,22 @@ const Navbar = () => {
             </Link>
 
             {token ? (
-              <div className="dropdown">
-                <button
-                  className="btn btn-outline-secondary dropdown-toggle"
-                  type="button"
-                  id="userMenuDropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+              <div className="d-flex align-items-center gap-2">
+                <Link
+                  to="/profile"
+                  className="btn btn-outline-secondary"
                 >
                   <Person className="me-2" />
                   {user?.firstName || "User"}
-                </button>
-                <ul
-                  className="dropdown-menu dropdown-menu-end"
-                  aria-labelledby="userMenuDropdown"
+                </Link>
+                <button
+                  className="btn btn-danger"
+                  onClick={handleLogout}
+                  type="button"
                 >
-                  <li>
-                    <Link className="dropdown-item" to="/profile">
-                      <Person className="me-2" />
-                      Profile
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="dropdown-item text-danger"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleLogout();
-                      }}
-                    >
-                      <BoxArrowRight className="me-2" />
-                      Logout
-                    </a>
-                  </li>
-                </ul>
+                  <BoxArrowRight className="me-2" />
+                  Logout
+                </button>
               </div>
             ) : (
               <>
