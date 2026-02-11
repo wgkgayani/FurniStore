@@ -85,12 +85,17 @@ const Navbar = () => {
                 <button
                   className="btn btn-outline-secondary dropdown-toggle"
                   type="button"
+                  id="userMenuDropdown"
                   data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
                   <Person className="me-2" />
                   {user?.firstName || "User"}
                 </button>
-                <ul className="dropdown-menu">
+                <ul
+                  className="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="userMenuDropdown"
+                >
                   <li>
                     <Link className="dropdown-item" to="/profile">
                       <Person className="me-2" />
@@ -98,10 +103,20 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                    <button className="dropdown-item" onClick={handleLogout}>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="dropdown-item text-danger"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleLogout();
+                      }}
+                    >
                       <BoxArrowRight className="me-2" />
                       Logout
-                    </button>
+                    </a>
                   </li>
                 </ul>
               </div>
