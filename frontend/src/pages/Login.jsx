@@ -269,25 +269,6 @@ const Login = () => {
           </div>
 
           {/* Additional Info */}
-          <div className="card mt-3">
-            <div className="card-body text-center">
-              <h6 className="card-title">Benefits of Signing In</h6>
-              <div className="row mt-3">
-                <div className="col-6 mb-2">
-                  <small>✓ Fast Checkout</small>
-                </div>
-                <div className="col-6 mb-2">
-                  <small>✓ Order Tracking</small>
-                </div>
-                <div className="col-6 mb-2">
-                  <small>✓ Wishlist</small>
-                </div>
-                <div className="col-6 mb-2">
-                  <small>✓ Exclusive Offers</small>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Contact Support */}
           <div className="text-center mt-3">
