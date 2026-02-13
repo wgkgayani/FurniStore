@@ -248,23 +248,6 @@ const Login = () => {
               </form>
 
               {/* Security Info */}
-              <div className="mt-4 pt-4 border-top">
-                <h6 className="text-center mb-3">Secure Login</h6>
-                <div className="row text-center">
-                  <div className="col-4">
-                    <div className="text-success mb-2">🔒</div>
-                    <small>SSL Secure</small>
-                  </div>
-                  <div className="col-4">
-                    <div className="text-success mb-2">🛡️</div>
-                    <small>Data Protected</small>
-                  </div>
-                  <div className="col-4">
-                    <div className="text-success mb-2">🔐</div>
-                    <small>Encrypted</small>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
