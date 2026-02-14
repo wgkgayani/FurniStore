@@ -14,6 +14,7 @@ import {
   BoxArrowRight,
 } from "react-bootstrap-icons";
 
+// UserProfile component allows users to view and edit their profile information, change password, and manage addresses
 const UserProfile = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const UserProfile = () => {
       return;
     }
 
+    // Pre-fill form with user data
     if (user) {
       setFormData((prev) => ({
         ...prev,
