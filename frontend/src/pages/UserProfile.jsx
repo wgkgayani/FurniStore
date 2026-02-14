@@ -19,6 +19,7 @@ const UserProfile = () => {
   const dispatch = useDispatch();
   const { user, token } = useSelector((state) => state.auth);
 
+  // Form state for profile and password updates
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -59,6 +60,7 @@ const UserProfile = () => {
     });
   };
 
+  // Simulated API calls for profile update and password change
   const handleProfileUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
