@@ -167,7 +167,6 @@ const UserProfile = () => {
                 </button>
                 <button
                   className={`list-group-item list-group-item-action text-start ${activeTab === "address" ? "active" : ""}`}
-                  onClick={() => setActiveTab("address")}
                 >
                   <GeoAlt className="me-2" />
                   Address Book
