@@ -144,3 +144,30 @@ export async function resetPassword(req, res) {
 
   return res.json({ message: "Password has been reset" });
 }
+
+export async function updateProfile(req, res) {
+  try {
+    const { email, firstName, lastName, phone, address, img } = req.body;
+    if (!email) {
+      return res.status(400).json({ message: "Email is required" });
+    }
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    if (firstName !== undefined) user.firstName = firstName;
+    if (lastName !== undefined) user.lastName = lastName;
+    if (phone !== undefined) user.phone = phone;
+    if (address !== undefined) user.address = address;
+    if (img !== undefined) user.img = img; // accept data URL or URL
+
+    await user.save();
+
+    return res.json({ message: "Profile updated", user });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ message: "Failed to update profile" });
+  }
+}

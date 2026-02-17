@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { logout } from "../redux/slices/authSlice";
+import { logout, setUser } from "../redux/slices/authSlice";
 import {
   Person,
   Envelope,
@@ -13,6 +13,7 @@ import {
   BoxSeam,
   BoxArrowRight,
 } from "react-bootstrap-icons";
+import { authAPI } from "../services/api";
 
 // UserProfile component allows users to view and edit their profile information, change password, and manage addresses
 const UserProfile = () => {
@@ -33,6 +34,8 @@ const UserProfile = () => {
   });
   const [activeTab, setActiveTab] = useState("profile");
   const [loading, setLoading] = useState(false);
+  const [imagePreview, setImagePreview] = useState(null);
+  const [imageDataUrl, setImageDataUrl] = useState(null);
 
   useEffect(() => {
     if (!token) {
@@ -62,16 +65,43 @@ const UserProfile = () => {
     });
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      setImagePreview(ev.target.result);
+      setImageDataUrl(ev.target.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
   // Simulated API calls for profile update and password change
   const handleProfileUpdate = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      toast.success("Profile updated successfully");
+    try {
+      const payload = {
+        email: formData.email,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        phone: formData.phone,
+        address: formData.address,
+      };
+      if (imageDataUrl) payload.img = imageDataUrl;
+
+      const res = await authAPI.updateProfile(payload);
+      toast.success(res.data.message || "Profile updated successfully");
+      if (res.data.user) {
+        // update local redux user state
+        dispatch(setUser(res.data.user));
+      }
       setLoading(false);
-    }, 1000);
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Failed to update profile");
+      setLoading(false);
+    }
   };
 
   const handlePasswordChange = async (e) => {
@@ -117,6 +147,7 @@ const UserProfile = () => {
               <div className="position-relative d-inline-block mb-3">
                 <img
                   src={
+                    imagePreview ||
                     user?.img ||
                     "https://avatar.iran.liara.run/public/boy?username=User"
                   }
@@ -128,7 +159,20 @@ const UserProfile = () => {
                     objectFit: "cover",
                   }}
                 />
-                <button className="btn btn-sm btn-primary rounded-circle position-absolute bottom-0 end-0">
+                <input
+                  id="profileImageInput"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="d-none"
+                />
+                <button
+                  type="button"
+                  className="btn btn-sm btn-primary rounded-circle position-absolute bottom-0 end-0"
+                  onClick={() =>
+                    document.getElementById("profileImageInput").click()
+                  }
+                >
                   <Camera size={16} />
                 </button>
               </div>
