@@ -110,9 +110,6 @@ const Home = () => {
         <div className="container">
           <div className="d-flex justify-content-between align-items-center mb-4">
             <h2 className="fw-bold">Featured Products</h2>
-            <Link to="/products" className="btn btn-outline-primary">
-              View All <ArrowRight className="ms-2" />
-            </Link>
           </div>
 
           {loading ? (
