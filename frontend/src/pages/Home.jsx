@@ -191,6 +191,83 @@ const Home = () => {
                 </div>
               </Link>
             </div>
+          </div>
+
+          <h2> </h2>
+
+          <div className="row g-4">
+            <div className="col-md-3">
+              <Link
+                to="/products?category=sofa"
+                className="text-decoration-none"
+              >
+                <div className="card category-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Sofas"
+                    className="card-img-top"
+                    style={{ height: "150px", objectFit: "cover" }}
+                  />
+                  <div className="card-body text-center">
+                    <h5 className="card-title">Sofas</h5>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="col-md-3">
+              <Link
+                to="/products?category=bed"
+                className="text-decoration-none"
+              >
+                <div className="card category-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Beds"
+                    className="card-img-top"
+                    style={{ height: "150px", objectFit: "cover" }}
+                  />
+                  <div className="card-body text-center">
+                    <h5 className="card-title">Beds</h5>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="col-md-3">
+              <Link
+                to="/products?category=table"
+                className="text-decoration-none"
+              >
+                <div className="card category-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Tables"
+                    className="card-img-top"
+                    style={{ height: "150px", objectFit: "cover" }}
+                  />
+                  <div className="card-body text-center">
+                    <h5 className="card-title">Tables</h5>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="col-md-3">
+              <Link
+                to="/products?category=chair"
+                className="text-decoration-none"
+              >
+                <div className="card category-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                    alt="Chairs"
+                    className="card-img-top"
+                    style={{ height: "150px", objectFit: "cover" }}
+                  />
+                  <div className="card-body text-center">
+                    <h5 className="card-title">Chairs</h5>
+                  </div>
+                </div>
+              </Link>
+            </div>
             <Link to="/products" className="btn btn-outline-primary">
               View All <ArrowRight className="ms-2" />
             </Link>
