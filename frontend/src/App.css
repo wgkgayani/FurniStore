@@ -112,6 +112,66 @@ body {
   height: 300px;
 }
 
+/* Advertisement Section */
+.advertisement-section {
+  padding: 20px 0;
+}
+
+.ad-banner {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ad-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.ad-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.ad-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.featured-ad {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 12px;
+  position: relative;
+}
+
+.featured-ad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .product-grid {
@@ -121,5 +181,13 @@ body {
 
   .main-content {
     padding: 10px 0;
+  }
+
+  .ad-banner {
+    min-height: 200px !important;
+  }
+
+  .ad-banner h2 {
+    font-size: 1.75rem !important;
   }
 }

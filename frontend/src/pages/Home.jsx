@@ -114,6 +114,219 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Advertisement Section */}
+      <section className="advertisement-section mb-5">
+        <div className="container">
+          {/* Main Offer Banner */}
+          <div className="row mb-4">
+            <div className="col-12">
+              <div
+                className="ad-banner py-5 px-5 rounded-lg shadow-lg position-relative overflow-hidden"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+                  color: "white",
+                  minHeight: "300px",
+                }}
+              >
+                <div className="position-relative z-3">
+                  <span className="badge bg-warning text-dark fs-6 mb-3">
+                    Limited Time Offer
+                  </span>
+                  <h2 className="display-5 fw-bold mb-3">
+                    Summer Furniture Sale
+                  </h2>
+                  <p className="lead mb-4">
+                    Get up to <strong>50% OFF</strong> on selected furniture
+                    collections. Transform your home with our premium furniture
+                    at unbeatable prices!
+                  </p>
+                  <Link
+                    to="/products"
+                    className="btn btn-light btn-lg px-5 py-3 fw-bold"
+                  >
+                    Shop Sale Now <ArrowRight className="ms-2" />
+                  </Link>
+                </div>
+                <div
+                  className="position-absolute"
+                  style={{
+                    right: "-50px",
+                    bottom: "-50px",
+                    opacity: "0.1",
+                    fontSize: "200px",
+                  }}
+                >
+                  🛋️
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Secondary Offers */}
+          <div className="row g-4 mb-4">
+            {/* New Products */}
+            <div className="col-lg-4">
+              <div
+                className="ad-card rounded-lg shadow-sm overflow-hidden h-100 position-relative"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                  color: "white",
+                  minHeight: "250px",
+                }}
+              >
+                <div className="p-4 d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <span className="badge bg-info mb-3">New Arrivals</span>
+                    <h4 className="fw-bold mb-2">Latest Collections</h4>
+                    <p className="mb-0">
+                      Discover our newest furniture designs with modern styles
+                      and contemporary aesthetics.
+                    </p>
+                  </div>
+                  <Link
+                    to="/products?sort=newest"
+                    className="btn btn-light btn-sm mt-3 align-self-start"
+                  >
+                    Explore Now
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Free Shipping Offer */}
+            <div className="col-lg-4">
+              <div
+                className="ad-card rounded-lg shadow-sm overflow-hidden h-100 position-relative"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+                  color: "white",
+                  minHeight: "250px",
+                }}
+              >
+                <div className="p-4 d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <span className="badge bg-success mb-3">Special Offer</span>
+                    <h4 className="fw-bold mb-2">Free Shipping Deal</h4>
+                    <p className="mb-0">
+                      Enjoy free shipping on all orders above $100. No hidden
+                      charges, just great savings!
+                    </p>
+                  </div>
+                  <Link
+                    to="/products"
+                    className="btn btn-light btn-sm mt-3 align-self-start"
+                  >
+                    Shop Now
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Clearance Sale */}
+            <div className="col-lg-4">
+              <div
+                className="ad-card rounded-lg shadow-sm overflow-hidden h-100 position-relative"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+                  color: "white",
+                  minHeight: "250px",
+                }}
+              >
+                <div className="p-4 d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <span className="badge bg-danger mb-3">Clearance Sale</span>
+                    <h4 className="fw-bold mb-2">Stock Clearance</h4>
+                    <p className="mb-0">
+                      Last chance to grab premium furniture at clearance prices.
+                      Limited stock available!
+                    </p>
+                  </div>
+                  <Link
+                    to="/products"
+                    className="btn btn-light btn-sm mt-3 align-self-start"
+                  >
+                    Grab Deal
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Ad Banner */}
+          <div className="row">
+            <div className="col-md-6">
+              <div
+                className="featured-ad rounded-lg overflow-hidden shadow-sm position-relative h-100"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+                  minHeight: "200px",
+                }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
+                  alt="Modern Sofa Collection"
+                  className="img-fluid h-100 w-100"
+                  style={{ objectFit: "cover", opacity: "0.3" }}
+                />
+                <div
+                  className="position-absolute top-0 start-0 p-4 w-100 h-100 d-flex flex-column justify-content-center"
+                  style={{ zIndex: 2 }}
+                >
+                  <h3 className="fw-bold text-white mb-2">Sofa Collection</h3>
+                  <p className="text-white mb-3">
+                    Premium comfort & style combined
+                  </p>
+                  <Link
+                    to="/products?category=sofa"
+                    className="btn btn-light btn-sm w-fit"
+                  >
+                    Browse Sofas
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-md-6">
+              <div
+                className="featured-ad rounded-lg overflow-hidden shadow-sm position-relative h-100"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #ffa400 0%, #ff6b6b 100%)",
+                  minHeight: "200px",
+                }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
+                  alt="Office Desk Collection"
+                  className="img-fluid h-100 w-100"
+                  style={{ objectFit: "cover", opacity: "0.3" }}
+                />
+                <div
+                  className="position-absolute top-0 start-0 p-4 w-100 h-100 d-flex flex-column justify-content-center"
+                  style={{ zIndex: 2 }}
+                >
+                  <h3 className="fw-bold text-white mb-2">Office Desks</h3>
+                  <p className="text-white mb-3">
+                    Work smarter with ergonomic designs
+                  </p>
+                  <Link
+                    to="/products?category=desk"
+                    className="btn btn-light btn-sm w-fit"
+                  >
+                    Browse Desks
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Categories Section */}
       <section className="categories-section mb-5">
         <div className="container">
